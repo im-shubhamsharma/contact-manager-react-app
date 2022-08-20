@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/contact-manager-react-app/static/css/main.c731b82b.css",
+    "main.css": "/contact-manager-react-app/static/css/main.8c070068.css",
     "main.js": "/contact-manager-react-app/static/js/main.713dfab9.js",
     "index.html": "/contact-manager-react-app/index.html",
-    "main.c731b82b.css.map": "/contact-manager-react-app/static/css/main.c731b82b.css.map",
+    "main.8c070068.css.map": "/contact-manager-react-app/static/css/main.8c070068.css.map",
     "main.713dfab9.js.map": "/contact-manager-react-app/static/js/main.713dfab9.js.map"
   },
   "entrypoints": [
-    "static/css/main.c731b82b.css",
+    "static/css/main.8c070068.css",
     "static/js/main.713dfab9.js"
   ]
 }
