@@ -9,6 +9,7 @@ function ContactList(props) {
     <ContactCard key={contact.id} contact={contact} />
   ));
 
+
   return (
       <div>
         <h4 style={{textAlign:"center"}}>

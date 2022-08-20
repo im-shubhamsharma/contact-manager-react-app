@@ -3,7 +3,6 @@ import data from "./data";
 const Context = React.createContext();
 
 function ContextProvider(props) {
-  // console.log(data);
   const [allContacts, setAllContacts] = useState(getData());
 
   useEffect(() => {
@@ -11,7 +10,7 @@ function ContextProvider(props) {
   }, [allContacts]);
 
   function getData() {
-    const storedData = JSON.parse(localStorage.getItem("contact"));
+    const storedData =  JSON.parse(localStorage.getItem("contact"));
     return storedData.length < 1 ? data : storedData;
   }
 
@@ -24,8 +23,6 @@ function ContextProvider(props) {
       prevContacts.filter((contact) => contact.id !== id)
     );
   }
-
-  // console.log(allContacts);
 
   return (
     <Context.Provider value={{ allContacts, addNewContact, deleteContact }}>

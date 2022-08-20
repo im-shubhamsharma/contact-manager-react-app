@@ -9,6 +9,10 @@
   padding: 10px 40px;
 }
 
+.Header .h2{
+    text-decoration: none;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -148,7 +152,6 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     background: #ae3c33;
     color: #fff;
-    border-radius: 15px;
     font-size: 20px;
     height: 60px;
   }
@@ -157,7 +160,7 @@ input[type="number"]::-webkit-outer-spin-button {
     position: fixed;
     bottom: 0;
     font-size: 20px;
-    height: 50px;
+    height: 0px;
   }
   nav button {
     box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.1);

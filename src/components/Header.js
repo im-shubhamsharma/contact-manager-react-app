@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="Header">
-      <h2>Contact Manager</h2>
+      <h2>
+        <Link style={{textDecoration:"none", color:"#000"}} to="/">Contact Manager</Link>
+      </h2>
 
       <nav>
         <button className="button">
@@ -22,7 +24,5 @@ function Header() {
     </div>
   );
 }
-// #6FC3F7
-// #1813A2
 
 export default Header;

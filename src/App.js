@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AddContacts from "./components/AddContact";
 import ContactList from "./components/ContactList";
-import { Link, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 import "./App.css";
 
 export default function () {
@@ -11,7 +11,6 @@ export default function () {
     <>
       <Header />
 
-      {/* <Navbar /> */}
       <main>
         <Routes>
           <Route exact path="/" element={<ContactList />} />
