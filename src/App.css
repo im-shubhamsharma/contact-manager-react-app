@@ -15,13 +15,13 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 20px;
+    height: 30px;
     box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.1);
     border-radius: 10px;
 }
 
 main{
-    width: 80%;
+    max-width: 450px;
     margin: auto;
     padding: 20px 0;
 }
@@ -66,16 +66,26 @@ form button{
 .cardContainer{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     gap: 30px;
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 0 15px;
+}
+
+.contactDetails{
+   margin-right: auto;
+}
+
+.contactName{
+    font-weight: 600;
+}
+.cotactEmail{
+    font-weight: 300;
 }
 
 .cardContainer i{
-    font-size: 20px;
+    font-size: 30px;
 }
 .editIcon{
     color: blue;

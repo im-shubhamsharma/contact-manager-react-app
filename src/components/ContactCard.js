@@ -1,23 +1,30 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../API/Context";
 
-export default function ContactCard() {
+export default function ContactCard(props) {
+   
+    const {deleteContact} = useContext(Context)
+    const {id, name, email, phone} = props.contact
+
+
   return (
     <div className="cardContainer">
-      <div className="imageContainer">
+      
+      {/* <div className="contactImage">
         <i className="fa-solid fa-user"></i>
-      </div>
+      </div> */}
 
-      <div>
-        <p>Shubham Sharma</p>
-        <p>shubh6396@gmail.com</p>
+      <div className="contactDetails">
+        <p className="contactName">{name}</p>
+        <p className="contactEmail">{email}</p>
       </div>
 
       <div className="editIcon">
-        <i class="fa-solid fa-pen-to-square"></i>
+        <i className="fa-solid fa-pen-to-square"></i>
       </div>
 
-      <div className="deleteIcon">
-        <i class="fa-solid fa-trash-can"></i>
+      <div onClick={()=>deleteContact(id)} className="deleteIcon">
+        <i className="fa-solid fa-trash-can"></i>
       </div>
     </div>
   );
