@@ -4,7 +4,7 @@ function Footer(){
     return(
         <div className="Footer">
             Made by Wolfee @ 2022
-        </div>
+        </div> 
     )
 }
 

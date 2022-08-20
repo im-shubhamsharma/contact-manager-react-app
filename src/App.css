@@ -1,95 +1,159 @@
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
 }
-.Header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1);
-}
-
-.Footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.1);
-    border-radius: 10px;
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
 }
 
-main{
-    max-width: 450px;
-    margin: auto;
-    padding: 20px 0;
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
 }
 
-form{
+main {
+  margin: auto;
+  padding: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+.input {
+  border: 1px solid #ccc;
+  display: block;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  background: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.button {
+  border: none;
+  min-width: 152px;
+  height: 40px;
+  margin: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ae3c33;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.links {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactListContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  gap: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 0 15px;
+  box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contactDetails {
+  margin-right: auto;
+}
+
+.contactName {
+  font-weight: 600;
+}
+.cotactEmail {
+  font-weight: 300;
+}
+
+.cardContainer i {
+  font-size: 30px;
+}
+.editIcon {
+  color: blue;
+}
+.deleteIcon {
+  color: #ae3c33;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.Navbar input {
+  width: 55%;
+}
+
+.Navbar button {
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .contactListContainer {
     display: flex;
     flex-direction: column;
-    gap:20px;
-}
-
-form label{
-    font-weight: 600;
-}
-
-form input{
-    border: 1px solid #ccc;
-    display: block;
-    height: 40px;
-    padding: 0 20px;
-    border-radius: 20px;
-    font-weight: 600;
-    background: none;
-}
-
-form button{
-    border: none;
-    width: 152px;
-    height: 40px;
-    margin: auto;
-    margin-top: 20px;
-    cursor: pointer;
+    padding: 10px;
+    gap: 8px;
+  }
+  .cardContainer i {
+    font-size: 25px;
+  }
+  .Navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    background: #ae3c33;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    border-radius: 20px;
-}
-
-.cardContainer{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 0 15px;
-}
-
-.contactDetails{
-   margin-right: auto;
-}
-
-.contactName{
-    font-weight: 600;
-}
-.cotactEmail{
-    font-weight: 300;
-}
-
-.cardContainer i{
-    font-size: 30px;
-}
-.editIcon{
-    color: blue;
-}
-.deleteIcon{
-    color: #ae3c33;
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+  }
 }

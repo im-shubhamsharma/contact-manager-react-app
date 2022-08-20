@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState,useContext } from "react";
 import { nanoid } from "nanoid";
 import { Context } from "../API/Context";
+import { useNavigate } from "react-router-dom";
 
 export default function AddContacts(props) {
   const { addNewContact } = useContext(Context);
+
+  const navigate = useNavigate();
+
 
   const [contact, setContact] = useState({
     id: "",
@@ -35,6 +39,8 @@ export default function AddContacts(props) {
       email: "",
       phone: "",
     });
+
+     navigate("/");
   }
 
   return (
@@ -43,6 +49,7 @@ export default function AddContacts(props) {
         type="text"
         name="name"
         placeholder="Name"
+        className="input"
         value={contact.name}
         onChange={handleChange}
       />
@@ -51,6 +58,7 @@ export default function AddContacts(props) {
         type="number"
         name="phone"
         placeholder="Phone Number"
+        className="input"
         value={contact.phone}
         onChange={handleChange}
       />
@@ -59,11 +67,12 @@ export default function AddContacts(props) {
         type="email"
         name="email"
         placeholder="Email Address"
+        className="input"
         value={contact.email}
         onChange={handleChange}
       />
 
-      <button>SUBMIT</button>
+      <button className="button">SUBMIT</button>
     </form>
   );
 }
