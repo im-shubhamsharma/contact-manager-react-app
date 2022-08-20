@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="Header">
       <h2>
-        <Link style={{textDecoration:"none", color:"#000"}} to="/">Contact Manager</Link>
+        <Link className="link" to="/">Contact Manager</Link>
       </h2>
 
       <nav>
