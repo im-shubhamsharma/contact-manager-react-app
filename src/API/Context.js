@@ -24,8 +24,23 @@ function ContextProvider(props) {
     );
   }
 
+  function updateContact(updatedContact){
+     setAllContacts((prevContacts) =>
+       prevContacts.map((contact) =>
+         contact.id === updatedContact.id ? updatedContact : contact
+       )
+     );
+  }
+
   return (
-    <Context.Provider value={{ allContacts, addNewContact, deleteContact }}>
+    <Context.Provider
+      value={{
+        allContacts,
+        addNewContact,
+        deleteContact,
+        updateContact,
+      }}
+    >
       {props.children}
     </Context.Provider>
   );

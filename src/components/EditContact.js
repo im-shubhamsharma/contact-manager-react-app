@@ -1,18 +1,20 @@
 import React, { useState, useContext } from "react";
-import { nanoid } from "nanoid";
 import { Context } from "../API/Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export default function AddContacts(props) {
-  const { addNewContact } = useContext(Context);
+export default function EditContact(props) {
+  const { updateContact } = useContext(Context);
 
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const { id, name, email, phone } = location.state;
+
   const [contact, setContact] = useState({
-    id: "",
-    name: "",
-    email: "",
-    phone: "",
+    id: id,
+    name: name,
+    email: email,
+    phone: phone,
   });
 
   function handleChange(event) {
@@ -29,12 +31,7 @@ export default function AddContacts(props) {
     if (contact.name === "" || contact.email === "" || contact.phone === "") {
       alert("All inputs are necessary");
     } else {
-      const newContactObj = {
-        ...contact,
-        id: nanoid(),
-      };
-
-      addNewContact(newContactObj);
+      updateContact(contact);
 
       setContact({
         id: "",
@@ -76,7 +73,7 @@ export default function AddContacts(props) {
         onChange={handleChange}
       />
 
-      <button className="button">SUBMIT</button>
+      <button className="button">UPDATE</button>
     </form>
   );
 }

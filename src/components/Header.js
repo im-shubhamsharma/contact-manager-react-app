@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
+  
+  const [searchData, serSearchData] = useState("");
+
+  function handleChange(){
+
+  }
+
   return (
     <div className="Header">
       <h2>
@@ -19,6 +26,7 @@ function Header() {
           type="text"
           placeholder="Search Contacts"
           className="input searchbar"
+          onChange={handleChange}
         />
       </nav>
     </div>
