@@ -1,31 +1,42 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { Context } from "../API/Context";
 
 function Header() {
-  
-  const [searchData, serSearchData] = useState("");
+  const { searchData, setSearchData, searchContacts } = useContext(Context);
 
-  function handleChange(){
+  const navigate = useNavigate();
 
+  const useparams = useParams();
+  console.log(useparams);
+
+  function handleChange(event) {
+    navigate("/");
+    const { value } = event.target;
+    setSearchData(value);
+    searchContacts();
   }
 
   return (
     <div className="Header">
       <h2>
-        <Link className="link" to="/">Contact Manager</Link>
+        <Link className="link" to="/">
+          Contact Manager
+        </Link>
       </h2>
 
       <nav>
-        <button className="button">
+        <div className="addButton">
           <Link className="links" to="/add">
-            Add New Contact
+            <button style={{width:"100%"}} className="button ">Add New Contact</button>
           </Link>
-        </button>
+        </div>
 
         <input
           type="text"
           placeholder="Search Contacts"
           className="input searchbar"
+          value={searchData}
           onChange={handleChange}
         />
       </nav>

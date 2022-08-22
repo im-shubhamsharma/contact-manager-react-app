@@ -3,9 +3,16 @@ import ContactCard from "./ContactCard";
 import { Context } from "../API/Context";
 
 function ContactList(props) {
-  const { allContacts } = useContext(Context);
+  const { allContacts, filteredData, searchData } = useContext(Context);
 
-  const contactElem = allContacts.map((contact) => (
+  let data;
+  if(searchData.length > 0){
+      data = filteredData;
+  }else{
+      data = allContacts;
+  }
+
+  const contactElem = data.map((contact) => (
     <ContactCard key={contact.id} contact={contact} />
   ));
 
@@ -14,7 +21,7 @@ function ContactList(props) {
       <div>
         <h4 style={{textAlign:"center"}}>
           {contactElem.length < 1
-            ? "Please click 'Add new contact' to add your contacts"
+            ? (searchData.length > 0 ? "No result found for your search" : "Please click 'Add new contact' to add your contacts")
             : `You have ${contactElem.length} contacts`}
         </h4>
 

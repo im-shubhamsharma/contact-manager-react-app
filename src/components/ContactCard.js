@@ -8,21 +8,18 @@ export default function ContactCard(props) {
 
   return (
     <div className="cardContainer">
-      {/* <div className="contactImage">
-        <i className="fa-solid fa-user"></i>
-      </div> */}
 
       <div className="contactDetails">
-        <p className="contactName">{name}</p>
-        <p className="contactEmail">{email}</p>
+        <Link className="link" to="/contact-info" state={props.contact}>
+          <p className="contactName">{name}</p>
+          <p className="contactEmail">{email}</p>
+        </Link>
       </div>
 
       <div className="editIcon">
         <Link to="/edit" state={props.contact}>
           {" "}
-          <i
-            className="fa-solid fa-pen-to-square"
-          ></i>{" "}
+          <i className="fa-solid fa-pen-to-square"></i>{" "}
         </Link>
       </div>
 
