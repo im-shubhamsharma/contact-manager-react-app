@@ -264,6 +264,9 @@ form .button {
   .status {
     margin: 5rem 0 1rem 0;
   }
+  form {
+    margin-top: 5rem;
+  }
   .contactListContainer {
     display: flex;
     flex-direction: column;
@@ -277,6 +280,7 @@ form .button {
     display: none;
   }
   .contactDetailsContainer {
+    margin-top: 5rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
