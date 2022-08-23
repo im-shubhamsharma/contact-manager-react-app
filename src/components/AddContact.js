@@ -76,7 +76,7 @@ export default function AddContacts(props) {
         onChange={handleChange}
       />
 
-      <button className="button">SUBMIT</button>
+      <button className="button">Add</button>
     </form>
   );
 }

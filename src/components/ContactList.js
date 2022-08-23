@@ -19,7 +19,7 @@ function ContactList(props) {
 
   return (
       <div>
-        <h4 style={{textAlign:"center"}}>
+        <h4 className="status" style={{textAlign:"center"}}>
           {contactElem.length < 1
             ? (searchData.length > 0 ? "No result found for your search" : "Please click 'Add new contact' to add your contacts")
             : `You have ${contactElem.length} contacts`}

@@ -6,7 +6,7 @@ import ContactList from "./components/ContactList";
 import EditContact from "./components/EditContact";
 import ContactDetails from "./components/ContactDetails";
 import {Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./styles/css/style.css";
 
 export default function () {
   return (

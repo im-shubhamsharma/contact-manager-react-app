@@ -73,7 +73,7 @@ export default function EditContact(props) {
         onChange={handleChange}
       />
 
-      <button className="button">UPDATE</button>
+      <button className="button">Update</button>
     </form>
   );
 }

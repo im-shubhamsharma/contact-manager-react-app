@@ -1,0 +1,168 @@
+@import "./globals/boilerplate";
+@import "./globals/typography";
+@import "./globals/contactDetails";
+
+.header {
+  background-color: $primary-color;
+}
+
+.header-container {
+  @include flex-prop();
+  height: 10vh;
+  width: 80%;
+  margin: 0 auto;
+
+  .title {
+    height: inherit;
+    flex-basis: 30%;
+    margin: auto 1rem;
+    @include flex-prop(center);
+
+    .link {
+      color: #fff;
+    }
+  }
+}
+
+nav {
+  @include flex-prop(space-evenly);
+  flex-basis: 70%;
+
+  .addContactsButton {
+    width: 40%;
+
+    button {
+      @include button();
+      width: 100%;
+    }
+  }
+
+  .searchBar {
+    @include button();
+    width: 40%;
+  }
+}
+
+main {
+  height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contactListContainer {
+  width: inherit;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.contactCardContainer {
+  @include flex-prop();
+  border: 1px solid $primary-color;
+  padding: 0 1.2rem 0 0.5rem;
+  gap: 1.5rem;
+  box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.1);
+
+  .contactDetails {
+    flex-basis: 70%;
+    padding: 0.5rem 1rem;
+
+    .contactName {
+      color: $primary-color;
+      font-weight: 700;
+    }
+
+    .contactEmail {
+      color: $primary-color;
+    }
+  }
+
+  .editIcon img {
+    width: 1.8rem;
+  }
+
+  .deleteIcon img {
+    width: 2rem;
+  }
+  .contactName {
+    margin-bottom: 0.5rem;
+  }
+}
+
+form {
+  max-width: 450px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  .input {
+    border: 0.5px solid $primary-color;
+    display: block;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    background: none;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  .button {
+    @include button;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 3vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.contactDetailsContainer {
+  width: inherit;
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  padding: 3rem 0;
+  gap: 3rem;
+
+  .image-section img {
+    width: 20rem;
+    height: 30rem;
+  }
+
+  .details-section {
+    height: 100%;
+    @include flex-prop(space-between);
+    flex-direction: column;
+
+    .details-container h2 img {
+      width: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .button-section {
+    @include flex-prop();
+    gap: 2rem;
+
+    .link .button {
+      @include button;
+      width: 10rem;
+    }
+  }
+}
+
+@import "./globals/responsive";
