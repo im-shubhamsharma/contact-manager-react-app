@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../API/Context";
-import { useNavigate} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function EditContact(props) {
   const { updateContact, selectedContactData } = useContext(Context);
 
-  const navigate = useNavigate();
-
   const { id, name, email, phone } = selectedContactData[0];
+
+   const history = useHistory();
 
   const [contact, setContact] = useState({
     id: id,
@@ -39,7 +39,7 @@ export default function EditContact(props) {
         phone: "",
       });
 
-      navigate("/");
+      history.push("/");
     }
   }
 

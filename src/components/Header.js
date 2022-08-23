@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { Context } from "../API/Context";
 
 const Header = () => {
   const { searchData, setSearchData, searchContacts } = useContext(Context);
 
-  const navigate = useNavigate();
 
   function handleChange(event) {
-    navigate("/");
+    <Redirect to="/" />;
+
     const { value } = event.target;
     setSearchData(value);
     searchContacts();

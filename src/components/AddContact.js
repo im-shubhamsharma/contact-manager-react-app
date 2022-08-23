@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import { nanoid } from "nanoid";
 import { Context } from "../API/Context";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function AddContacts(props) {
   const { addNewContact } = useContext(Context);
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const [contact, setContact] = useState({
     id: "",
@@ -43,7 +43,7 @@ export default function AddContacts(props) {
         phone: "",
       });
 
-      navigate("/");
+      history.push("/");
     }
   }
 

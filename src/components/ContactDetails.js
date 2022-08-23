@@ -9,7 +9,7 @@ import userIcon from "../images/user.png"
 export default function ContactDetails(props) {
 
    const { selectedContactData } = useContext(Context);
-   const { id, name, email, phone } = selectedContactData[0];
+   const { name, email, phone } = selectedContactData[0];
 
   return (
     <div className="contactDetailsContainer">
