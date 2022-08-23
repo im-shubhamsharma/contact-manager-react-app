@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../API/Context";
 
 const Header = () => {
   const { searchData, setSearchData, searchContacts } = useContext(Context);
 
   const navigate = useNavigate();
-
-  const useparams = useParams();
-  console.log(useparams);
 
   function handleChange(event) {
     navigate("/");

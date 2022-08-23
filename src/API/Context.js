@@ -5,6 +5,8 @@ const Context = React.createContext();
 function ContextProvider(props) {
   const [allContacts, setAllContacts] = useState(getData());
 
+  const [selectedContactData, setSelectedContactData] = useState([]);
+
   const [searchData, setSearchData] = useState("");
 
   const [filteredData, setFilteredData] = useState("");
@@ -14,7 +16,7 @@ function ContextProvider(props) {
   }, [allContacts]);
 
   function getData() {
-    const storedData =  JSON.parse(localStorage.getItem("contact"));
+    const storedData = JSON.parse(localStorage.getItem("contact"));
     return storedData.length < 1 ? data : storedData;
   }
 
@@ -28,15 +30,19 @@ function ContextProvider(props) {
     );
   }
 
-  function updateContact(updatedContact){
-     setAllContacts((prevContacts) =>
-       prevContacts.map((contact) =>
-         contact.id === updatedContact.id ? updatedContact : contact
-       )
-     );
+  function selectContact(id) {
+    setSelectedContactData(allContacts.filter((contact) => contact.id === id));
   }
 
-  function searchContacts(){
+  function updateContact(updatedContact) {
+    setAllContacts((prevContacts) =>
+      prevContacts.map((contact) =>
+        contact.id === updatedContact.id ? updatedContact : contact
+      )
+    );
+  }
+
+  function searchContacts() {
     const filteredData = allContacts.filter(
       (contact) =>
         contact.name.toLowerCase().includes(searchData.toLowerCase()) ||
@@ -56,7 +62,9 @@ function ContextProvider(props) {
         searchData,
         setSearchData,
         searchContacts,
-        filteredData
+        filteredData,
+        selectedContactData,
+        selectContact,
       }}
     >
       {props.children}

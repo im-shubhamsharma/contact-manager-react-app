@@ -5,20 +5,20 @@ import editIcon from "../images/edit.png";
 import deleteIcon from "../images/trash.png";
 
 export default function ContactCard(props) {
-  const { deleteContact } = useContext(Context);
+  const { selectContact, deleteContact } = useContext(Context);
   const { id, name, email } = props.contact;
 
   return (
     <div className="contactCardContainer">
-      <div className="contactDetails">
-        <Link className="link" to="/contact-info" state={props.contact}>
+      <div onClick={() => selectContact(id)} className="contactDetails">
+        <Link className="link" to="/contact-info">
           <p className="contactName">{name}</p>
           <p className="contactEmail">{email}</p>
         </Link>
       </div>
 
-      <div className="editIcon">
-        <Link to="/edit" state={props.contact}>
+      <div onClick={() => selectContact(id)} className="editIcon">
+        <Link to="/edit">
           <img src={editIcon} alt="edit contacts" />
         </Link>
       </div>

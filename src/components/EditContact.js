@@ -1,14 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../API/Context";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 export default function EditContact(props) {
-  const { updateContact } = useContext(Context);
+  const { updateContact, selectedContactData } = useContext(Context);
 
   const navigate = useNavigate();
 
-  const location = useLocation();
-  const { id, name, email, phone } = location.state;
+  const { id, name, email, phone } = selectedContactData[0];
 
   const [contact, setContact] = useState({
     id: id,

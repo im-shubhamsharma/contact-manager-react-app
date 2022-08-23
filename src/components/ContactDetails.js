@@ -1,15 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Context } from "../API/Context";
 import phoneIcon from "../images/phone.png"
 import emailIcon from "../images/email.png"
 import userIcon from "../images/user.png"
 
 export default function ContactDetails(props) {
-  const location = useLocation();
 
-  const { name, email, phone } = location.state;
+   const { selectedContactData } = useContext(Context);
+   const { id, name, email, phone } = selectedContactData[0];
 
   return (
     <div className="contactDetailsContainer">
@@ -46,7 +46,7 @@ export default function ContactDetails(props) {
             <button className="button">Go Back</button>
           </Link>
 
-          <Link className="link" to="/edit" state={location.state}>
+          <Link className="link" to="/edit">
             <button className="button">Edit Contact</button>
           </Link>
           
